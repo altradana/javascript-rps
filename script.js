@@ -1,0 +1,8 @@
+/*
+1. Generate computer choice
+2. Human input choice
+3. Compare both choices
+4. Play for 5 rounds
+5. Winner is whoever reach 5 scores first
+*/
+
