@@ -21,7 +21,7 @@ function getComputerChoice(){
     }
 }
 
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
 
 function getHumanChoice(){
     const humanChoice = prompt("Rock || Paper || Scissors").toLowerCase();
@@ -32,4 +32,32 @@ function getHumanChoice(){
         return "ERROR Input Choice";
     }
 }
-console.log(getHumanChoice());
+// console.log(getHumanChoice());
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(){
+    const human = getHumanChoice();
+    const computer = getComputerChoice();
+    console.log(human);
+    console.log(computer);
+
+    if(human === computer){
+        return "This round is tie";
+    }else if(human === 'rock' && computer === 'scissors'){
+        humanScore++
+        return `You Win ${human} beat ${computer}`;
+    }else if(human === 'paper' && computer === 'rock'){
+        humanScore++
+        return `You Win ${human} beat ${computer}`;
+    }else if(human === 'scissors' && computer === 'paper'){
+        humanScore++
+        return `You Win ${human} beat ${computer}`;
+    }else{
+        computerScore++
+        return `Computer Win ${computer} beat ${human}`;
+    }
+}
+
+console.log(playRound());
