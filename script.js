@@ -40,24 +40,40 @@ let computerScore = 0;
 function playRound(){
     const human = getHumanChoice();
     const computer = getComputerChoice();
-    console.log(human);
-    console.log(computer);
+    console.log(`Human ${human} vs Computer ${computer}`);
 
     if(human === computer){
         return "This round is tie";
     }else if(human === 'rock' && computer === 'scissors'){
         humanScore++
+        // console.log(`H:${humanScore} vs C:${computerScore}`)
         return `You Win ${human} beat ${computer}`;
     }else if(human === 'paper' && computer === 'rock'){
         humanScore++
+        // console.log(`H:${humanScore} vs C:${computerScore}`)
         return `You Win ${human} beat ${computer}`;
     }else if(human === 'scissors' && computer === 'paper'){
         humanScore++
+        // console.log(`H:${humanScore} vs C:${computerScore}`)
         return `You Win ${human} beat ${computer}`;
     }else{
         computerScore++
+        // console.log(`H:${humanScore} vs C:${computerScore}`)
         return `Computer Win ${computer} beat ${human}`;
     }
 }
+// console.log(playRound());
 
-console.log(playRound());
+function playGame(){
+    while(humanScore < 5 && computerScore < 5){
+        playRound();
+        console.log(`H:${humanScore} vs C:${computerScore}`)
+    }
+    if(humanScore === 5){
+        return "Game Over, You Win this game";
+    }else{
+        return "Game Over, Computer Win this game";
+    }
+}
+
+console.log(playGame());
