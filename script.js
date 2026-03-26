@@ -22,3 +22,14 @@ function getComputerChoice(){
 }
 
 console.log(getComputerChoice());
+
+function getHumanChoice(){
+    const humanChoice = prompt("Rock || Paper || Scissors").toLowerCase();
+    // console.log(humanChoice);
+    if(humanChoice === 'rock' ||humanChoice === 'paper' ||humanChoice === 'scissors'){
+        return humanChoice;
+    }else{
+        return "ERROR Input Choice";
+    }
+}
+console.log(getHumanChoice());
